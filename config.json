@@ -1,0 +1,98 @@
+{
+  "config" : [{ 
+    "order" : "1",
+    "name" : "logGenerator",
+    "args" : [ "100", "brokerLogIdentifier" ]
+  },
+  {
+    "order" : "2",
+    "name" : "Broker",
+    "args" : [ "brokerLogIdentifier", "logIdentifier" ]
+  },
+  {
+    "order" : "3",
+    "name" : "LogIdentifier",
+    "args" : [ "logIdentifier", "AppLogNormalizerBroker" ,"SystemLogNormalizerBroker" ]
+  },
+  {
+    "order" : "4a",
+    "name" : "Broker",
+    "args" : [ "SystemLogNormalizerBroker", "SystemLogNormalizer" ]
+  },
+  {
+    "order" : "4b",
+    "name" : "Broker",
+    "args" : [ "AppLogNormalizerBroker", "AppLogNormalizer" ]
+  },
+  {
+    "order" : "5a",
+    "name" : "SystemLogNormalizer",
+    "args" : [ "SystemLogNormalizer", "WordSeparatorBroker" ]
+  },
+  {
+    "order" : "5b",
+    "name" : "AppLogNormalizer",
+    "args" : [ "AppLogNormalizer", "WordSeparatorBroker" ]
+  },
+  {
+    "order" : "6",
+    "name" : "Broker",
+    "args" : [ "WordSeparatorBroker", "WordSeparator" ]
+  },
+  {
+    "order" : "7",
+    "name" : "WordSeparator",
+    "args" : [ "WordSeparator", "WordFilterBroker" ]
+  },
+  {
+    "order" : "8",
+    "name" : "Broker",
+    "args" : [ "WordFilterBroker", "WordFilter" ]
+  },
+  {
+    "order" : "9",
+    "name" : "WordFilter",
+    "args" : [ "WordFilter", "StandardRecorderBroker" ]
+  },
+  {
+    "order" : "10",
+    "name" : "Broker",
+    "args" : [ "StandardRecorderBroker", "StandardRecorder" ]
+  },
+  {
+    "order" : "11",
+    "name" : "StandardRecorder",
+    "args" : [ "StandardRecorder", "CriticalRecorderBroker", "NetworkRecorderBroker", "UnknownRecorderBroker" ]
+  },
+  {
+    "order" : "12a",
+    "name" : "Broker",
+    "args" : [ "CriticalRecorderBroker", "CriticalRecorder" ]
+  },
+  {
+    "order" : "12b",
+    "name" : "Broker",
+    "args" : [ "NetworkRecorderBroker", "NetworkRecorder" ]
+  },
+  {
+    "order" : "12c",
+    "name" : "Broker",
+    "args" : [ "UnknownRecorderBroker", "UnknownRecorder" ]
+  },
+  {
+    "order" : "13a",
+    "name" : "CriticalRecorder",
+    "args" : [ "CriticalRecorder" ]
+  },
+  {
+    "order" : "13b",
+    "name" : "NetworkRecorder",
+    "args" : [ "NetworkRecorder" ]
+  },
+  {
+    "order" : "13c",
+    "name" : "UnknownRecorder",
+    "args" : [ "UnknownRecorder" ]
+  }
+  ]
+}
