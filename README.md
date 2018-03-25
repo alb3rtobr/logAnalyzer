@@ -9,3 +9,4 @@ The exercise consists in the implementation of a log processing system that shou
 * Flexible configuration of the log processing pipeline (remove, change or add steps)
 * Flexible log analysis (possibility of changing a running analisis service)
 
+<img src="https://github.com/alb3rtobr/logAnalyzer/blob/master/images/logAnalyzer1.PNG?raw=true" width=1024/>
